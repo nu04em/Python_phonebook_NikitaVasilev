@@ -24,6 +24,49 @@
 #
 # phone.txt
 
+def add_note():
+    add_name()
+    add_surname()
+    add_patronymic()
+    add_phonenumber()
+    add_comment()
+    add_birthday()
+    str = f'{add_name} {add_name()} {add_patronymic} {add_phonenumber} {add_comment}\n
+
+def add_name():
+    name = input('Введите имя абонента: ')
+    with open('phonebook.txt', 'a', encoding='UTF-8') as data:
+        data.write(name)
+
+def add_surname():
+    surname = input('Введите фамилию абонента: ')
+    with open('phonebook.txt', 'a', encoding='UTF-8') as data:
+        data.write(surname)
+
+def add_patronymic():
+    patronymic = input('Введите отчество абонента: ')
+    with open('phonebook.txt', 'a', encoding='UTF-8') as data:
+        data.write(patronymic)
+
+def add_phonenumber():
+    phonenumber = input('Введите номер телефона абонента: ')
+    while not phonenumber.isdigit() or len(phonenumber) != 11:
+        phonenumber = input('Введите корректный номер телефона из 11 символов: ')
+
+    print(phonenumber)
+
+def add_comment():
+    comment = input('Введите комментарий к абоненту: ')
+    with open('phonebook.txt', 'a', encoding='UTF-8') as data:
+        data.write(comment)
+
+def add_birthday():
+    birthday = input('Введите дату рождения абонента: ')
+    with open('phonebook.txt', 'a', encoding='UTF-8') as data:
+        data.write(birthday)
+
+
+
 def initial_notes():
     with open('phonebook.txt', 'a', encoding='UTF-8') as data:
         data.write('Иванов Иван Иванович 89011001010')
